@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: steelblue;
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+
+.container h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container a {
+    text-decoration: none;
+    color: lightblue;
+}
+
+.form-control {
+    width: 300px;
+    margin: 20px 0 40px;
+    position: relative;
+}
+/* input是行内元素，设置为块级元素达到换行效果 */
+.form-control input {
+    background: transparent;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    font-size: 18px;
+    color: #fff;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: lightblue;
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: lightblue;
+    transform: translateY(-30px);
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    background-color: lightblue;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.text {
+    margin: 30px 0 10px;
+}
