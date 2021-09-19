@@ -3,31 +3,50 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
-body {
+/* 
+如果将高度设置为百分比的
+那么body的高度将会由子元素的高度绝定
+ */
+body{
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
+/* 
+为什么会出现横向滚动条
+因为h3标签溢出了
+为什么会出现纵向滚动条
+因为vh会将滚动条的宽度也算进可视区域
+*/
 
+/* 
+为flex父容器设置一个宽度
+可以使子元素根据父元素宽度进行比例占满
+*/
 .container {
     display: flex;
     width: 90vw;
 }
-
+/* 
+因为div是h3标签撑起来的
+当div没设置宽高时
+将h3标签绝对定位 会导致div不显示
+因为据对定位会使元素脱离正常文档流
+*/
 .panel {
-    background-size: cover;
     background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 80vh;
     flex: 0.5;
-    border-radius: 50px;
+    height: 80vh;
     margin: 10px;
-    position: relative;
-    transition: all 0.3s ease-in;
     cursor: pointer;
+    border-radius: 50px;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
 .panel.active {
@@ -45,15 +64,18 @@ body {
 
 .panel.active h3 {
     opacity: 1;
-    transition: opacity 0.3s ease-in 0.4s;
+    transition: opacity 0.3s ease 0.4s;
 }
+
 
 @media (max-width: 480px) {
     .container {
         width: 100vw;
     }
+
     .panel:nth-of-type(4),
     .panel:nth-of-type(5) {
         display: none;
     }
 }
+
