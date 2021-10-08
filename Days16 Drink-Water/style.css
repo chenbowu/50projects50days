@@ -51,6 +51,12 @@ h3 {
     font-size: 14px;
     text-align: center;
     cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.cup.cup-small.full {
+    background-color: var(--fill-color);
+    color: #fff;
 }
 
 .cups {
@@ -88,6 +94,7 @@ h3 {
     font-size: 30px;
     font-weight: bold;
     background: var(--fill-color);
+    transition: 0.3s ease;
 }
 
 .text {
