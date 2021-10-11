@@ -9,11 +9,6 @@ smallCups.forEach((cup, idx) => {
 });
 
 function highlightCups(idx) {
-    // if (smallCups[idx].classList.contains('full') &&
-    //     (idx === smallCups.length - 1 ||
-    //         !smallCups[idx].nextElementSibling.classList.contains('full'))) {
-    //     idx--;
-    // }
     if (smallCups[idx].classList.contains('full') &&
         !smallCups[idx].nextElementSibling?.classList.contains('full')) {
             idx--;
