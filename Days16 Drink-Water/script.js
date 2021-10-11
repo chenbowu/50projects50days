@@ -1,31 +1,18 @@
-const smallCups = document.querySelectorAll('.cup-small'); // All small cups dom element
-const remained = document.getElementById('remained'); // The Big cup dom element.
-const percentage = document.getElementById('percentage'); // 百分比元素 
-const liters = document.getElementById('liters'); // 显示公升的dom element
+const smallCups = document.querySelectorAll('.cup-small'); // This is small cups dom element
+const liters = document.getElementById('liters');
+const remained = document.getElementById('remained');
+const percentage = document.getElementById('percentage');
 
-// Define click events for small cups
 smallCups.forEach((cup, idx) => {
     cup.addEventListener('click', () => highlightCups(idx));
 });
 
-function highlightCups(idx) {
-    if (smallCups[idx].classList.contains('full') &&
-        !smallCups[idx].nextElementSibling?.classList.contains('full')) {
-        idx--;
-    }
-    smallCups.forEach((cup, i) => {
-        if (i <= idx) {
-            cup.classList.add('full');
-        } else {
-            cup.classList.remove('full');
-        }
-    });
+updateBigCup(); // 初始化
 
-    updateBigCup();
-}
-
+/**
+ * 更新大杯子容器
+ */
 function updateBigCup() {
-    console.time('Test');
     const fullCups = document.querySelectorAll('.cup-small.full').length;
     const totalCups = smallCups.length;
 
@@ -38,12 +25,32 @@ function updateBigCup() {
         percentage.innerText = `${fullCups / totalCups * 100}%`;
     }
 
-    if (fullCups === totalCups) {
+    if (fullCups === totalCups) {   
         remained.style.visibility = 'hidden';
         remained.style.height = 0;
     } else {
         remained.style.visibility = 'visible';
         liters.innerText = `${2 - 250 * fullCups / 1000}L`;
     }
-    console.timeEnd('Test');
+
+}
+/**
+ * 
+ * @param {number} idx 点击的小杯子所在父元素的下标 
+ */
+function highlightCups(idx) {
+    if (smallCups[idx].classList.contains('full') &&
+        !smallCups[idx].nextElementSibling?.classList.contains('full')) {
+        idx--;
+    }
+
+    smallCups.forEach((cup,index) => {
+        if (index <= idx) {
+            cup.classList.add('full');
+        } else {
+            cup.classList.remove('full');
+        }
+    });
+
+    updateBigCup();
 }
