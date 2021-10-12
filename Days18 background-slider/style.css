@@ -3,19 +3,18 @@
 * {
     box-sizing: border-box;
 }
-
+/*  font-family: 'Roboto', sans-serif; */
 body {
     font-family: 'Roboto', sans-serif;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    width: 100vw;
     height: 100vh;
-    overflow: hidden;
     margin: 0;
-    background-position: center center;
-    background-size: cover;
-    transition: 0.4s;
+    background: center/cover;
+    transition: 0.4s ease;
 }
 
 body::before {
@@ -23,30 +22,30 @@ body::before {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.7);
     z-index: -1;
 }
 
 .slider-container {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    height: 70vh;
     width: 70vw;
-    position: relative;
+    height: 70vh;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),0 3px 6px rgba(0, 0, 0, 0.23);
     overflow: hidden;
+    position: relative;
 }
 
 .slide {
-    opacity: 0;
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     background: center/cover;
+    opacity: 0;
     position: absolute;
     top: -15vh;
     left: -15vw;
-    transition: 0.4s ease;
     z-index: 1;
+    transition: 0.4s;
 }
 
 .slide.active {
@@ -55,24 +54,20 @@ body::before {
 
 .arrow {
     position: fixed;
-    background: transparent;
-    color: #fff;
-    padding: 20px;
-    font-size: 30px;
-    border: 2px solid orange;
     top: 50%;
     transform: translateY(-50%);
+    padding: 20px;
+    border: 2px solid orange;
+    font-size: 30px;
+    color: #fff;
+    background: transparent;
     cursor: pointer;
 }
 
-.arrow:foucs {
-    outline: none; /* 清除按钮焦点默认样式 */
-}
-
-.left-arrow {
+.arrow.left-arrow {
     left: calc(15vw - 65px);
 }
 
-.right-arrow {
+.arrow.right-arrow {
     right: calc(15vw - 65px);
 }
