@@ -5,18 +5,19 @@
 }
 /*  font-family: 'Roboto', sans-serif; */
 body {
-    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     width: 100vw;
     height: 100vh;
     margin: 0;
+    position: relative;
     background: center/cover;
-    transition: 0.4s ease;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    transition: 0.4s;
 }
-
+/* Body背景图片蒙版 */
 body::before {
     content: '';
     position: absolute;
@@ -29,45 +30,49 @@ body::before {
 }
 
 .slider-container {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0,0,0,0.23);
     width: 70vw;
     height: 70vh;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),0 3px 6px rgba(0, 0, 0, 0.23);
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 }
 
 .slide {
+    opacity: 0;
     width: 100vw;
     height: 100vh;
-    background: center/cover;
-    opacity: 0;
     position: absolute;
     top: -15vh;
     left: -15vw;
-    z-index: 1;
-    transition: 0.4s;
+    background: center/cover;
+    transition: 0.4s ease;
 }
 
 .slide.active {
     opacity: 1;
+    z-index: 1;
 }
 
+/* 
+fixed:绝对定位 相对与浏览器窗口便宜
+absolute:绝对定位 相对于于元素最近的已定位的祖先元素（即设置了绝对定位或者相对定位的祖先元素）
+*/
 .arrow {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
     padding: 20px;
     border: 2px solid orange;
+    position: fixed;
+    top: 50%;
+    background: transparent;
     font-size: 30px;
     color: #fff;
-    background: transparent;
+    transform: translateY(-50%);
     cursor: pointer;
 }
 
-.arrow.left-arrow {
+.left-arrow {
     left: calc(15vw - 65px);
 }
 
-.arrow.right-arrow {
+.right-arrow {
     right: calc(15vw - 65px);
 }
