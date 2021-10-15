@@ -2,8 +2,8 @@ const body = document.body;
 const btnPrev = document.getElementById('left');
 const btnNext = document.getElementById('right');
 const slides = document.querySelectorAll('.slide');
-let currentActive = 0;
 
+let currentActive = 0;
 btnPrev.addEventListener('click', () => {
     currentActive--;
     if (currentActive < 0) {
@@ -15,7 +15,7 @@ btnPrev.addEventListener('click', () => {
 
 btnNext.addEventListener('click', () => {
     currentActive++;
-    if (currentActive > slides.length -1) {
+    if (currentActive > slides.length - 1) {
         currentActive = 0;
     }
     setBgToBody();
