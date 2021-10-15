@@ -20,7 +20,7 @@ btnNext.addEventListener('click', () => {
     }
     setBgToBody();
     setBgToSlidesContainer();
-})
+});
 
 setBgToBody();
 

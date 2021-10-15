@@ -1,0 +1,23 @@
+{
+  "name": "50projects50days",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/chenbowu/50projects50days.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenbowu/50projects50days/issues"
+  },
+  "homepage": "https://github.com/chenbowu/50projects50days#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "standard": "^16.0.4"
+  }
+}
