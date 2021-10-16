@@ -1,78 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 * {
     box-sizing: border-box;
 }
+
 /*  font-family: 'Roboto', sans-serif; */
 body {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    margin: 0;
     width: 100vw;
     height: 100vh;
-    margin: 0;
-    position: relative;
+    font-family: "Roboto", sans-serif;
     background: center/cover;
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
     transition: 0.4s;
 }
+
 /* Body背景图片蒙版 */
 body::before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.7);
-    z-index: -1;
+    content: "";
 }
-
 .slider-container {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0,0,0,0.23);
-    width: 70vw;
-    height: 70vh;
     position: relative;
     overflow: hidden;
+    width: 70vw;
+    height: 70vh;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-
 .slide {
-    opacity: 0;
-    width: 100vw;
-    height: 100vh;
     position: absolute;
     top: -15vh;
     left: -15vw;
+    width: 100vw;
+    height: 100vh;
     background: center/cover;
+    opacity: 0;
     transition: 0.4s ease;
 }
-
 .slide.active {
-    opacity: 1;
     z-index: 1;
+    opacity: 1;
 }
 
-/* 
+/*
 fixed:绝对定位 相对与浏览器窗口便宜
 absolute:绝对定位 相对于于元素最近的已定位的祖先元素（即设置了绝对定位或者相对定位的祖先元素）
 */
 .arrow {
-    padding: 20px;
-    border: 2px solid orange;
     position: fixed;
     top: 50%;
-    background: transparent;
+    padding: 20px;
     font-size: 30px;
-    color: #fff;
+    border: 2px solid orange;
+    color: #ffffff;
+    background: transparent;
     transform: translateY(-50%);
-    cursor: pointer;
 }
-
 .left-arrow {
     left: calc(15vw - 65px);
 }
-
 .right-arrow {
     right: calc(15vw - 65px);
 }

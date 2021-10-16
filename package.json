@@ -18,6 +18,11 @@
   "homepage": "https://github.com/chenbowu/50projects50days#readme",
   "devDependencies": {
     "eslint": "^7.32.0",
-    "standard": "^16.0.4"
+    "standard": "^16.0.4",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0"
+  },
+  "dependencies": {
+    "stylelint": "^13.13.1"
   }
 }
