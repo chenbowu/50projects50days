@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 * {
     box-sizing: border-box;
 }
@@ -29,6 +30,7 @@ body::before {
     background: rgba(0, 0, 0, 0.7);
     content: "";
 }
+
 .slider-container {
     position: relative;
     overflow: hidden;
@@ -36,6 +38,7 @@ body::before {
     height: 70vh;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
+
 .slide {
     position: absolute;
     top: -15vh;
@@ -46,6 +49,7 @@ body::before {
     opacity: 0;
     transition: 0.4s ease;
 }
+
 .slide.active {
     z-index: 1;
     opacity: 1;
@@ -61,13 +65,15 @@ absolute:绝对定位 相对于于元素最近的已定位的祖先元素（即�
     padding: 20px;
     font-size: 30px;
     border: 2px solid orange;
-    color: #ffffff;
+    color: #fff;
     background: transparent;
     transform: translateY(-50%);
 }
+
 .left-arrow {
     left: calc(15vw - 65px);
 }
+
 .right-arrow {
     right: calc(15vw - 65px);
 }
